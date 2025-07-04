@@ -1,0 +1,37 @@
+[general]
+import = ["~/.config/alacritty/fonts.toml", 
+          "~/.config/alacritty/themes/tokyo_night.toml"
+]
+live_config_reload = true
+
+[window]
+decorations = "none"
+dynamic_title = true
+opacity = 1
+dynamic_padding = true
+
+[window.padding]
+x = 0
+y = 0
+
+[window.class]
+instance = "Alacritty"
+general = "Alacritty"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[cursor]
+blink_interval = 600
+unfocused_hollow = false
+
+[cursor.style]
+shape = "Block"
+blinking = "Off"
+
+[selection]
+save_to_clipboard = true
+
+[terminal]
+shell = "/bin/bash"
