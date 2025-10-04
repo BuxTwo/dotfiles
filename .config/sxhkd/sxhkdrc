@@ -3,8 +3,8 @@
 #
 
 # terminal emulator
-super + Return
-	alacritty
+super + q
+    alacritty
 
 # program launcher
 super + @space

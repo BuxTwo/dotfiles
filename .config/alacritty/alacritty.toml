@@ -1,14 +1,17 @@
 [general]
-import = ["~/.config/alacritty/fonts.toml", 
-          "~/.config/alacritty/themes/tokyo_night.toml"
+import = [
+    "~/.config/alacritty/fonts.toml",
+    "~/.config/alacritty/themes/tokyo_night.toml"
 ]
 live_config_reload = true
 
+[env]
+TERM = "xterm-256color"
+
 [window]
-decorations = "none"
+decorations = "None"
 dynamic_title = true
 opacity = 1
-dynamic_padding = true
 
 [window.padding]
 x = 0
@@ -18,20 +21,25 @@ y = 0
 instance = "Alacritty"
 general = "Alacritty"
 
-[scrolling]
-history = 10000
-multiplier = 3
-
 [cursor]
-blink_interval = 600
 unfocused_hollow = false
+blink_timeout = 0
+style.shape = "Beam"
+style.blinking = "Always"
 
-[cursor.style]
-shape = "Block"
-blinking = "Off"
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+    {key = "c", mods = "Control|Shift", action = "Copy"},
+    {key = "v", mods = "Control|Shift", action = "Paste"},
+    {key = "j", mods = "Control|Shift", action = "ScrollPageDown"},
+    {key = "k", mods = "Control|Shift", action = "ScrollPageUp"}
+]
 
 [selection]
 save_to_clipboard = true
 
 [terminal]
-shell = "/bin/bash"
+shell = "/usr/bin/zsh"
