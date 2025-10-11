@@ -13,3 +13,6 @@ export VISUAL="nvim"
 
 typeset -U fpath
 fpath+=("$ZDOTDIR/.zfunc")
+
+export GOPATH="$HOME/.local/go"
+export PATH="$PATH:$HOME/.local/go/bin"
