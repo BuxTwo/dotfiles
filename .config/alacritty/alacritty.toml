@@ -1,0 +1,49 @@
+[general]
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
+live_config_reload = true
+
+[font]
+size = 14
+builtin_box_drawing = true
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "None"
+dynamic_title = true
+opacity = 1
+
+[window.padding]
+x = 2
+y = 0
+
+[window.class]
+instance = "Alacritty"
+general = "Alacritty"
+
+[cursor]
+unfocused_hollow = false
+blink_timeout = 0
+style.shape = "Beam"
+style.blinking = "Never"
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+    {key = "c", mods = "Control|Shift", action = "Copy"},
+    {key = "v", mods = "Control|Shift", action = "Paste"},
+    {key = "j", mods = "Control", action = "ScrollPageDown"},
+    {key = "k", mods = "Control", action = "ScrollPageUp"}
+]
+
+[selection]
+save_to_clipboard = true
+
+[terminal]
+shell = "/usr/bin/zsh"

@@ -1,0 +1,129 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "spacing": 0,
+    "fixed-center": true,
+
+    "modules-left": [
+        "custom/launcher",
+        "cpu",
+        "memory",
+        "temperature"
+    ],
+
+    "modules-center": ["hyprland/workspaces"],
+
+    "modules-right": [
+        "network",
+        // "tray",
+        "pulseaudio",
+        // "backlight",
+        // "battery",
+        "hyprland/language",
+        "clock",
+        "custom/power"
+    ],
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y %m %d}",
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "<span color='#f5c2e7'></span>  {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 10,
+        "format": "<span color='#cba6f7'></span>  {used:0.1f}G",
+        "tooltip": false
+    },
+    "temperature": {
+        "interval": 10,
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": "<span color='#f38ba8'>{icon}</span> {temperatureC}°C",
+        "format": "<span color='#f9e2af'>{icon}</span> {temperatureC}°C",
+        "format-icons": [""],
+        "tooltip": false
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "scroll-step": 5,
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "interval": 1,
+        "format": "<span color='#a6e3a1'>{icon}</span>  {capacity}%",
+        "format-warning": "<span color='#f9e2af'>{icon}</span>  {capacity}%",
+        "format-critical": "<span color='#f38ba8'>{icon}</span>  {capacity}%",
+        "format-charging": "<span color='#a6e3a1'></span> {capacity}%",
+        "format-plugged": "<span color='#f9e2af'></span> {capacity}%",
+        "format-alt": "{time}",
+        "format-time": "{H} h {m} min",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "<span color='#eba0ac'>{icon}</span> {essid}",
+        "format-ethernet": "<span color='#94e2d5'></span>  {ifname}",
+        "format-disconnected": "<span color='#f38ba8'>󰌙</span>",
+        "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
+        "on-click": "nm-connection-editor",
+        "tooltip": false
+    },
+    "pulseaudio": {
+		"format": "<span color='#fab387'>{icon}</span> {volume}%",
+		"format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"],
+			"headphone": ""
+		},
+		"format-muted": "<span color='#f38ba8'>󰝟</span>",
+		"on-click": "pavucontrol",
+		"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"scroll-step": 5
+	},
+    "custom/power": {
+        "format" : "<span color='#f38ba8'></span>",
+        "on-click": "wlogout -b 4 -m 400",
+	    "tooltip": false
+    },
+    "custom/launcher": {
+        "format": "<span color='#89b4fa'></span>",
+        "on-click": "wofi --show drun",
+	    "on-click-right": "killall wofi",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "sort-by-number": true,
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+	    "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": "",
+            "urgent": ""
+        },
+        "persistent-workspaces": {
+            "*": 7
+        }
+    },
+    "hyprland/language": {
+        "format": "{short}",
+	"on-click": "hyprctl switchxkblayout gsky-rsq-20052-keyboard next"
+        // "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    }
+}
