@@ -8,17 +8,17 @@
         "custom/launcher",
         "cpu",
         "memory",
-        "temperature"
+        "temperature",
+        // "network",
+        "tray"
     ],
 
     "modules-center": ["hyprland/workspaces"],
 
     "modules-right": [
-        "network",
-        // "tray",
         "pulseaudio",
-        // "backlight",
-        // "battery",
+        "backlight",
+        "battery",
         "hyprland/language",
         "clock",
         "custom/power"
@@ -41,8 +41,10 @@
     },
     "temperature": {
         "interval": 10,
-        "thermal-zone": 2,
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input",
+        "thermal-zone": 28,
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         "format-critical": "<span color='#f38ba8'>{icon}</span> {temperatureC}°C",
         "format": "<span color='#f9e2af'>{icon}</span> {temperatureC}°C",
@@ -72,12 +74,13 @@
         "tooltip": false
     },
     "network": {
-        "format-wifi": "<span color='#eba0ac'>{icon}</span> {essid}",
-        "format-ethernet": "<span color='#94e2d5'></span>  {ifname}",
+        "format-wifi": "<span color='#eba0ac'>{icon}</span>",
+        "format-ethernet": "<span color='#94e2d5'></span>",
         "format-disconnected": "<span color='#f38ba8'>󰌙</span>",
         "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
         "on-click": "nm-connection-editor",
-        "tooltip": false
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-ethernet": "{ifname}"
     },
     "pulseaudio": {
 		"format": "<span color='#fab387'>{icon}</span> {volume}%",
@@ -92,12 +95,13 @@
 	},
     "custom/power": {
         "format" : "<span color='#f38ba8'></span>",
-        "on-click": "wlogout -b 4 -m 400",
+        "on-click": "wlogout -b 4 -L 200 -R 200 -T 350 -B 350",
+        // "on-click": "wlogout -b 4 -m 400",
 	    "tooltip": false
     },
     "custom/launcher": {
         "format": "<span color='#89b4fa'></span>",
-        "on-click": "wofi --show drun",
+        "on-click": "wofi --hide-scroll --show drun --style $HOME/.config/wofi/style1.css",
 	    "on-click-right": "killall wofi",
         "tooltip": false
     },
@@ -119,8 +123,8 @@
     },
     "hyprland/language": {
         "format": "{short}",
-	"on-click": "hyprctl switchxkblayout gsky-rsq-20052-keyboard next"
-        // "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+	    // "on-click": "hyprctl switchxkblayout gsky-rsq-20052-keyboard next"
+        "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
     },
     "tray": {
         "icon-size": 21,

@@ -7,17 +7,19 @@
 }
 
 #waybar {
-    background-color: @base;
+    background-color: transparent;
     color: @text;
+}
+
+#waybar > box {
+    background-color: @base;
+    margin: 4px 4px 0px;
+    border-radius: 4px;
 }
 
 tooltip {
-    background-color: @base;
-    color: @text;
-}
-
-#workspaces {
-	background-color: @base;
+  background-color: @base;
+  color: @text;
 }
 
 #workspaces button {
@@ -36,6 +38,11 @@ tooltip {
     color: @sky;
 }
 
+#battery.critical,
+#temperature.critical {
+    color: @red;
+}
+
 #custom-launcher,
 #custom-power,
 #clock,
@@ -48,7 +55,6 @@ tooltip {
 #temperature,
 #memory,
 #cpu {
-	background-color: @base;
 	padding: 5px 10px;
 }
 

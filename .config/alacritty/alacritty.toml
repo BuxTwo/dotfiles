@@ -17,10 +17,6 @@ decorations = "None"
 dynamic_title = true
 opacity = 1
 
-[window.padding]
-x = 2
-y = 0
-
 [window.class]
 instance = "Alacritty"
 general = "Alacritty"
@@ -28,7 +24,7 @@ general = "Alacritty"
 [cursor]
 unfocused_hollow = false
 blink_timeout = 0
-style.shape = "Beam"
+style.shape = "Block"
 style.blinking = "Never"
 
 [mouse]

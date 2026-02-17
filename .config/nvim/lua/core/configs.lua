@@ -1,5 +1,8 @@
 -- Basic Settings
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.opt.showmode = false
+vim.opt.guicursor = "i:block"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.wo.signcolumn = "yes"
@@ -33,9 +36,4 @@ vim.opt.softtabstop = 4
 -- Shorter messages
 vim.opt.shortmess:append("c")
 
--- Restore cursor on nvim exit
-vim.api.nvim_create_autocmd("VimLeave", {
-    callback = function()
-        vim.opt.guicursor = "a:ver25"
-    end,
-})
+vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]

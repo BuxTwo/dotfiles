@@ -69,6 +69,9 @@ function M.config()
             enabled = true,
             indentscope_color = "",
         },
+        telescope = {
+            enabled = true,
+        },
     },
 })
 
