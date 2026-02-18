@@ -25,7 +25,7 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: @sky;
+    color: @teal;
 }
 
 #workspaces button:hover {
@@ -33,7 +33,7 @@ tooltip {
     text-shadow: none;
     background: none;
     border-color: transparent;
-    color: @sky;
+    color: @teal;
 }
 
 #custom-launcher,

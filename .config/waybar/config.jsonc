@@ -8,17 +8,18 @@
         "custom/launcher",
         "cpu",
         "memory",
-        "temperature",
+        "temperature"
         // "network",
-        "tray"
+        // "tray"
     ],
 
     "modules-center": ["hyprland/workspaces"],
 
     "modules-right": [
+        "tray",
         "pulseaudio",
-        "backlight",
-        "battery",
+        // "backlight",
+        // "battery",
         "hyprland/language",
         "clock",
         "custom/power"
@@ -41,10 +42,9 @@
     },
     "temperature": {
         "interval": 10,
-        "thermal-zone": 28,
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input",
+        // "thermal-zone": 28,
+        // "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+        "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp3_input",
         "critical-threshold": 80,
         "format-critical": "<span color='#f38ba8'>{icon}</span> {temperatureC}°C",
         "format": "<span color='#f9e2af'>{icon}</span> {temperatureC}°C",
@@ -123,8 +123,8 @@
     },
     "hyprland/language": {
         "format": "{short}",
-	    // "on-click": "hyprctl switchxkblayout gsky-rsq-20052-keyboard next"
-        "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+	    "on-click": "hyprctl switchxkblayout gsky-rsq-20052-keyboard next"
+        // "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
     },
     "tray": {
         "icon-size": 21,

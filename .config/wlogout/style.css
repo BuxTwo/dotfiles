@@ -19,14 +19,14 @@ button {
     margin: 2px;
     text-shadow: none;
 	color: #cdd6f4;
-	background-color: #181825;
+	background-color: #1e1e2e;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 35%;
 }
 
 button:focus, button:active, button:hover {
-	background-color: rgb(48, 50, 66);
+	background-color: rgba(108, 112, 134, 0.5);
 	outline-style: none;
 }
 
