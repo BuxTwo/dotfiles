@@ -1,7 +1,6 @@
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias pg="ping"
 
 (( ${+commands[eza]} )) && {
     alias ls="eza --icons=always"
@@ -10,6 +9,7 @@ alias pg="ping"
 
 (( ${+commands[tmux]})) && {
     alias ta="tmux attach"
+    alias td="tmux detach"
     alias tns="tmux new-session"
 }
 
