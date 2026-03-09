@@ -95,14 +95,14 @@
 	},
     "custom/power": {
         "format" : "<span color='#f38ba8'></span>",
-        "on-click": "wlogout -b 4 -L 200 -R 200 -T 350 -B 350",
-        // "on-click": "wlogout -b 4 -m 400",
+        // "on-click": "wlogout -b 4 -L 200 -R 200 -T 350 -B 350",
+        "on-click": "wlogout -b 4 -m 400",
 	    "tooltip": false
     },
     "custom/launcher": {
         "format": "<span color='#89b4fa'></span>",
-        "on-click": "wofi --hide-scroll --show drun --style $HOME/.config/wofi/style1.css",
-	    "on-click-right": "killall wofi",
+        "on-click": "pgrep wofi > /dev/null || wofi --hide-scroll --show drun --style $HOME/.config/wofi/style1.css",
+	    "on-click-right": "pgrep wofi > /dev/null && killall -q wofi",
         "tooltip": false
     },
     "hyprland/workspaces": {
