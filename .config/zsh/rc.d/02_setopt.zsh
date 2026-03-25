@@ -15,4 +15,5 @@ setopt INTERACTIVE_COMMENTS
 # Sort numbers numerically
 setopt NUMERIC_GLOB_SORT
 
-PROMPT_EOL_MARK="%K{red} %k"
+# Add parameter expansion
+setopt PROMPT_SUBST

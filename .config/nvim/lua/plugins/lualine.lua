@@ -6,6 +6,7 @@ local M = {
 function M.config()
     require('lualine').setup {
         options = {
+            globalstatus = true,
             icons_enabled = true,
             theme = "catppuccin",
         }

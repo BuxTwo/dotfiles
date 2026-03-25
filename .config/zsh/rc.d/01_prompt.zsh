@@ -1,2 +1,5 @@
 NEWLINE=$'\n'
-export PROMPT="%F{#94e2d5}%n%f@%m %F{#94e2d5}%~%f${NEWLINE}& "
+MAINLINE="%F{cyan}%n%f@%m %F{cyan}%~%f${NEWLINE}"
+
+export PROMPT="%(?.${MAINLINE}& .${MAINLINE}%F{red}&%f )"
+export PROMPT_EOL_MARK="%K{red} %k"
