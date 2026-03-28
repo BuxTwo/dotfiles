@@ -17,7 +17,6 @@ fi
 
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker/machine"
 export GOPATH="$XDG_DATA_HOME/go"
-export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
-export QT_QPA_PLATFORMTHEME="qt6ct"
