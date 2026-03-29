@@ -101,8 +101,9 @@
     },
     "custom/launcher": {
         "format": "<span color='#89b4fa'></span>",
-        "on-click": "pgrep wofi > /dev/null || wofi --hide-scroll --show drun --style $HOME/.config/wofi/style1.css",
-	    "on-click-right": "pgrep wofi > /dev/null && killall -q wofi",
+        // "on-click": "pgrep wofi > /dev/null || wofi --hide-scroll --show drun --style $HOME/.config/wofi/style1.css",
+	    // "on-click-right": "pgrep wofi > /dev/null && killall -q wofi",
+        "on-click": "fuzzel",
         "tooltip": false
     },
     "hyprland/workspaces": {
