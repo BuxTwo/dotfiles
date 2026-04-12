@@ -1,3 +1,4 @@
-require("core.mappings")
-require("core.configs")
-require("core.lazy")
+require("keymaps")
+require("plugins")
+require("configs")
+require("autocmds")
