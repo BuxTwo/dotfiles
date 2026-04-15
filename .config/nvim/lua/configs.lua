@@ -1,7 +1,8 @@
 local opt = vim.opt
 local cmd = vim.cmd
+local api = vim.api
 
-opt.shell = os.getenv("SHELL")
+opt.shell = vim.env.SHELL
 
 opt.showmode = false
 opt.guicursor = "i:block"
@@ -30,7 +31,7 @@ opt.list = true
 opt.listchars = { space = "·", extends = ">", precedes = "<" }
 
 opt.expandtab = true
-opt.smartindent = true 
+opt.smartindent = true
 opt.autoindent = true
 opt.shiftround = true
 opt.shiftwidth = 4
@@ -42,3 +43,6 @@ opt.clipboard = "unnamedplus"
 opt.shortmess = "aoOstTIcF"
 
 cmd.colorscheme("catppuccin-mocha")
+
+api.nvim_set_hl(0, "Visual", { bg = "#cdd6f4", fg = "#1e1e2e" })
+api.nvim_set_hl(0, "YankHighlight", { bg = "#cdd6f4", fg = "#1e1e2e" })

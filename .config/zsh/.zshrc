@@ -1,4 +1,4 @@
-for conffile in $ZDOTDIR/rc.d/*; do
+for conffile in $ZDOTDIR/rc/*; do
     source $conffile
 done
 unset conffile

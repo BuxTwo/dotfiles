@@ -5,7 +5,7 @@ fi
 
 unsetopt GLOBAL_RCS
 
-for envfile in $ZDOTDIR/env.d/*; do
+for envfile in $ZDOTDIR/env/*; do
     source $envfile
 done
 unset envfile homezshenv
