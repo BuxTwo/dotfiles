@@ -16,16 +16,13 @@ tooltip {
     color: @text;
 }
 
-#workspaces {
-	background-color: @base;
-}
-
 #workspaces button {
-    color: @lavender;
+    padding: 5px;
+    color: @overlay0;
 }
 
 #workspaces button.active {
-    color: @teal;
+    color: @lavender;
 }
 
 #workspaces button:hover {
@@ -33,23 +30,22 @@ tooltip {
     text-shadow: none;
     background: none;
     border-color: transparent;
-    color: @teal;
+    color: @lavender;
 }
 
 #custom-launcher,
 #custom-power,
+#tray,
 #clock,
 #language,
 #battery,
 #backlight,
 #pulseaudio,
 #network,
-#tray,
 #temperature,
 #memory,
 #cpu {
-	background-color: @base;
-	padding: 5px 10px;
+    padding: 5px 10px;
 }
 
 #custom-power {

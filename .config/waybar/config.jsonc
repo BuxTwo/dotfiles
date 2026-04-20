@@ -1,6 +1,6 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
+    "layer": "top",
+    "position": "top",
     "spacing": 0,
     "fixed-center": true,
 
@@ -9,47 +9,43 @@
         "cpu",
         "memory",
         "temperature"
-        // "network",
-        // "tray"
     ],
 
-    "modules-center": ["hyprland/workspaces"],
+    "modules-center": ["niri/workspaces"],
 
     "modules-right": [
-        "tray",
         "pulseaudio",
         // "backlight",
-        // "battery",
-        "hyprland/language",
+        "niri/language",
         "clock",
-        "custom/power"
+        "custom/power",
+        "tray"
     ],
+
+    "custom/power": {
+        "format" : "<span color='#f38ba8'></span>",
+        // "on-click": "wlogout -b 4 -L 200 -R 200 -T 350 -B 350",
+        "on-click": "wlogout -b 4 -m 400",
+        "tooltip": false
+    },
+    "custom/launcher": {
+        "format": "<span color='#89b4fa'></span>",
+        "on-click": "fuzzel",
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
     "clock": {
         "interval": 1,
         "format": "{:%H:%M}",
         "format-alt": "{:%Y %m %d}",
         "tooltip": false
     },
-    "cpu": {
-        "interval": 10,
-        "format": "<span color='#f5c2e7'></span>  {usage}%",
-        "tooltip": false
-    },
-    "memory": {
-        "interval": 10,
-        "format": "<span color='#cba6f7'></span>  {used:0.1f}G",
-        "tooltip": false
-    },
-    "temperature": {
-        "interval": 10,
-        // "thermal-zone": 28,
-        // "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
-        "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp3_input",
-        "critical-threshold": 80,
-        "format-critical": "<span color='#f38ba8'>{icon}</span> {temperatureC}°C",
-        "format": "<span color='#f9e2af'>{icon}</span> {temperatureC}°C",
-        "format-icons": [""],
-        "tooltip": false
+    "niri/language": {
+        "format": "{short}",
+        "on-click": "niri msg action switch-layout next"
     },
     "backlight": {
         "format": "{icon} {percent}%",
@@ -62,7 +58,7 @@
             "warning": 30,
             "critical": 15
         },
-        "interval": 1,
+        "interval": 5,
         "format": "<span color='#a6e3a1'>{icon}</span>  {capacity}%",
         "format-warning": "<span color='#f9e2af'>{icon}</span>  {capacity}%",
         "format-critical": "<span color='#f38ba8'>{icon}</span>  {capacity}%",
@@ -83,52 +79,42 @@
         "tooltip-format-ethernet": "{ifname}"
     },
     "pulseaudio": {
-		"format": "<span color='#fab387'>{icon}</span> {volume}%",
-		"format-icons": {
-			"default": ["󰕿", "󰖀", "󰕾"],
-			"headphone": ""
-		},
-		"format-muted": "<span color='#f38ba8'>󰝟</span>",
-		"on-click": "pavucontrol",
-		"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"scroll-step": 5
-	},
-    "custom/power": {
-        "format" : "<span color='#f38ba8'></span>",
-        // "on-click": "wlogout -b 4 -L 200 -R 200 -T 350 -B 350",
-        "on-click": "wlogout -b 4 -m 400",
-	    "tooltip": false
+        "format": "<span color='#fab387'>{icon}</span> {volume}%",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"],
+            "headphone": ""
+        },
+        "format-muted": "<span color='#f38ba8'>󰝟</span>",
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "scroll-step": 5
     },
-    "custom/launcher": {
-        "format": "<span color='#89b4fa'></span>",
-        // "on-click": "pgrep wofi > /dev/null || wofi --hide-scroll --show drun --style $HOME/.config/wofi/style1.css",
-	    // "on-click-right": "pgrep wofi > /dev/null && killall -q wofi",
-        "on-click": "fuzzel",
+    "cpu": {
+        "interval": 5,
+        "format": "<span color='#f5c2e7'></span>  {usage}%",
         "tooltip": false
     },
-    "hyprland/workspaces": {
+    "memory": {
+        "interval": 5,
+        "format": "<span color='#cba6f7'></span>  {used:0.1f}G",
+        "tooltip": false
+    },
+    "temperature": {
+        "interval": 5,
+        // "thermal-zone": 28,
+        // "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+        "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp3_input",
+        "critical-threshold": 80,
+        "format-critical": "<span color='#f38ba8'>{icon}</span> {temperatureC}°C",
+        "format": "<span color='#f9e2af'>{icon}</span> {temperatureC}°C",
+        "format-icons": [""],
+        "tooltip": false
+    },
+    "niri/workspaces": {
         "format": "{icon}",
-        "on-click": "activate",
-        "sort-by-number": true,
-        "on-scroll-down": "hyprctl dispatch workspace e+1",
-	    "on-scroll-up": "hyprctl dispatch workspace e-1",
         "format-icons": {
-            "active": "",
-            "default": "",
-            "empty": "",
-            "urgent": ""
+            "default": ""
         },
-        "persistent-workspaces": {
-            "*": 7
-        }
-    },
-    "hyprland/language": {
-        "format": "{short}",
-	    "on-click": "hyprctl switchxkblayout gsky-rsq-20052-keyboard next"
-        // "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
-    },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
+        "tooltip": false
     }
 }
