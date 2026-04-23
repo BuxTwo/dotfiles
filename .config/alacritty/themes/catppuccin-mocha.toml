@@ -11,7 +11,8 @@ cursor = "#cdd6f4"
 
 [colors.vi_mode_cursor]
 text = "#1e1e2e"
-cursor = "#b4befe"
+cursor = "#cdd6f4"
+# cursor = "#b4befe"
 
 [colors.search.matches]
 foreground = "#1e1e2e"

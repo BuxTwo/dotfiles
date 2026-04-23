@@ -2,41 +2,35 @@
 import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
 live_config_reload = true
 
-[env]
-TERM = "xterm-256color"
-
-[terminal]
-shell = "/usr/bin/zsh"
-
 [selection]
 save_to_clipboard = true
 
 [font]
 size = 14
-builtin_box_drawing = true
 
-normal.family = "JetBrainsMono Nerd Font"
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
 
 [window]
 decorations = "None"
 dynamic_title = true
 dynamic_padding = true
 padding = { x = 4, y = 4 }
-
 class = { instance = "Alacritty", general = "Alacritty" }
 
 [cursor]
 unfocused_hollow = false
-style.shape = "Block"
-style.blinking = "Never"
+
+[cursor.style]
+shape = "Block"
+blinking = "Never"
 
 [mouse]
 hide_when_typing = true
 
 [keyboard]
 bindings = [
-    {key = "c", mods = "Control|Shift", action = "Copy"},
-    {key = "v", mods = "Control|Shift", action = "Paste"},
-    {key = "j", mods = "Control", action = "ScrollPageDown"},
-    {key = "k", mods = "Control", action = "ScrollPageUp"}
+    {key = "y", mods = "Control", action = "Copy"},
+    {key = "p", mods = "Control", action = "Paste"}
 ]

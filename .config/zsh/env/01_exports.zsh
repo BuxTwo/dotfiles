@@ -11,6 +11,21 @@ if [[ ! -v XDG_STATE_HOME ]]; then
     export XDG_STATE_HOME="$HOME/.local/state"
 fi
 
+if (( ${+commands[nvim]} )); then
+    export EDITOR="nvim"
+    export VISUAL="nvim"
+    export SUDO_EDITOR="nvim"
+elif (( ${+commands[vim]} )); then
+    export EDITOR="vim"
+    export VISUAL="vim"
+    export SUDO_EDITOR="vim"
+fi
+
+export PAGER=less
+export LESS="--RAW-CONTROL-CHARS --ignore-case --LONG-PROMPT --use-color --tabs=4 --mouse"
+export READNULLCMD=$PAGER
+
+export TERM="xterm-256color"
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 
@@ -20,6 +35,10 @@ fi
 
 if (( ${+commands[eza]} )); then
     export EZA_ICONS_AUTO=1
+fi
+
+if (( ${+commands[bat]} )); then
+    export BAT_THEME="Catppuccin Mocha"
 fi
 
 if (( ${+commands[fzf]} )); then

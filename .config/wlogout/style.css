@@ -25,7 +25,7 @@ button {
 }
 
 button:focus, button:active, button:hover {
-    background-color: rgba(108, 112, 134, 0.5);
+    background-color: rgba(108, 112, 134, 1);
     outline-style: none;
 }
 
