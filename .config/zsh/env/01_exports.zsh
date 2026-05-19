@@ -22,7 +22,7 @@ elif (( ${+commands[vim]} )); then
 fi
 
 export PAGER=less
-export LESS="--RAW-CONTROL-CHARS --ignore-case --LONG-PROMPT --use-color --tabs=4 --mouse"
+export LESS="--RAW-CONTROL-CHARS --ignore-case --LONG-PROMPT --tabs=4 --mouse"
 export READNULLCMD=$PAGER
 
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"

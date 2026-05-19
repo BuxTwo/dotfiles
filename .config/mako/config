@@ -1,9 +1,0 @@
-include=~/.config/mako/themes/catppuccin-mocha-lavender
-
-layer=overlay
-border-radius=10
-max-icon-size=32
-font=JetBrains Mono Nerd 10
-
-[category=mpd]
-group-by=category
