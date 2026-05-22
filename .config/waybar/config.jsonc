@@ -9,6 +9,7 @@
         "cpu",
         "memory",
         "temperature"
+        // "battery"
     ],
 
     "modules-center": ["niri/workspaces"],
