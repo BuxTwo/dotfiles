@@ -6,17 +6,17 @@
 
     "modules-left": [
         "custom/launcher",
+        "battery",
         "cpu",
         "memory",
         "temperature"
-        // "battery"
     ],
 
     "modules-center": ["niri/workspaces"],
 
     "modules-right": [
         "pulseaudio",
-        // "backlight",
+        "backlight",
         "niri/language",
         "clock",
         "custom/power",
@@ -25,8 +25,8 @@
 
     "custom/power": {
         "format" : "<span color='#f38ba8'></span>",
-        // "on-click": "wlogout -b 4 -L 200 -R 200 -T 350 -B 350",
-        "on-click": "wlogout -b 4 -m 400",
+        "on-click": "wlogout -b 4 -L 200 -R 200 -T 350 -B 350",
+        // "on-click": "wlogout -b 4 -m 400",
         "tooltip": false
     },
     "custom/launcher": {
@@ -103,8 +103,8 @@
     "temperature": {
         "interval": 5,
         // "thermal-zone": 28,
-        // "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
-        "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp3_input",
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+        // "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp3_input",
         "critical-threshold": 80,
         "format-critical": "<span color='#f38ba8'>{icon}</span> {temperatureC}°C",
         "format": "<span color='#f9e2af'>{icon}</span> {temperatureC}°C",
