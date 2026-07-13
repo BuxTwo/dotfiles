@@ -25,8 +25,7 @@
 
     "custom/power": {
         "format" : "<span color='#f38ba8'></span>",
-        "on-click": "wlogout -b 4 -L 200 -R 200 -T 350 -B 350",
-        // "on-click": "wlogout -b 4 -m 400",
+        "on-click": "powermenu.sh",
         "tooltip": false
     },
     "custom/launcher": {
@@ -41,7 +40,7 @@
     "clock": {
         "interval": 1,
         "format": "{:%H:%M}",
-        "format-alt": "{:%Y %m %d}",
+        "format-alt": "{:%d %m %Y}",
         "tooltip": false
     },
     "niri/language": {
@@ -51,7 +50,7 @@
     "backlight": {
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "scroll-step": 5,
+        "scroll-step": 2,
         "tooltip": false
     },
     "battery": {
@@ -60,20 +59,20 @@
             "critical": 15
         },
         "interval": 5,
-        "format": "<span color='#a6e3a1'>{icon}</span>  {capacity}%",
-        "format-warning": "<span color='#f9e2af'>{icon}</span>  {capacity}%",
-        "format-critical": "<span color='#f38ba8'>{icon}</span>  {capacity}%",
-        "format-charging": "<span color='#a6e3a1'></span> {capacity}%",
-        "format-plugged": "<span color='#f9e2af'></span> {capacity}%",
-        "format-alt": "{time}",
-        "format-time": "{H} h {m} min",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip": false
+        "format": "<span color='#a6e3a1'>{icon}</span> {capacity}%",
+        "format-warning": "<span color='#f9e2af'>{icon}</span> {capacity}%",
+        "format-critical": "<span color='#f38ba8'>{icon}</span> {capacity}%",
+        "format-charging": "<span color='#a6e3a1'>{icon}</span> {capacity}%",
+        "format-plugged": "<span color='#f9e2af'></span> {capacity}%",
+        "format-icons": {
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+        }
     },
     "network": {
         "format-wifi": "<span color='#eba0ac'>{icon}</span>",
-        "format-ethernet": "<span color='#94e2d5'></span>",
-        "format-disconnected": "<span color='#f38ba8'>󰌙</span>",
+        "format-ethernet": "<span color='#94e2d5'>󰈀</span>",
+        "format-disconnected": "<span color='#f38ba8'>󱞐</span>",
         "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
         "on-click": "nm-connection-editor",
         "tooltip-format-wifi": "{essid}",
@@ -82,13 +81,13 @@
     "pulseaudio": {
         "format": "<span color='#fab387'>{icon}</span> {volume}%",
         "format-icons": {
-            "default": ["󰕿", "󰖀", "󰕾"],
+            "default": ["", "", "", "", "", "", " ", " ", " "],
             "headphone": ""
         },
-        "format-muted": "<span color='#f38ba8'>󰝟</span>",
+        "format-muted": "<span color='#f38ba8'></span>",
         "on-click": "pavucontrol",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "scroll-step": 5
+        "scroll-step": 2
     },
     "cpu": {
         "interval": 5,
@@ -104,17 +103,19 @@
         "interval": 5,
         // "thermal-zone": 28,
         "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
-        // "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp3_input",
         "critical-threshold": 80,
         "format-critical": "<span color='#f38ba8'>{icon}</span> {temperatureC}°C",
         "format": "<span color='#f9e2af'>{icon}</span> {temperatureC}°C",
-        "format-icons": [""],
+        "format-icons": ["", "", ""],
         "tooltip": false
     },
     "niri/workspaces": {
         "format": "{icon}",
+        "on-scroll-up": "niri msg action focus-workspace-up",
+        "on-scroll-down": "niri msg action focus-workspace-down",
         "format-icons": {
-            "default": ""
+            "default": "",
+            "empty": ""
         },
         "tooltip": false
     }

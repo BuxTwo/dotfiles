@@ -17,7 +17,6 @@ decorations = "None"
 dynamic_title = true
 dynamic_padding = true
 padding = { x = 4, y = 4 }
-class = { instance = "Alacritty", general = "Alacritty" }
 
 [cursor]
 unfocused_hollow = false
@@ -28,9 +27,3 @@ blinking = "Never"
 
 [mouse]
 hide_when_typing = true
-
-[keyboard]
-bindings = [
-    {key = "y", mods = "Control", action = "Copy"},
-    {key = "p", mods = "Control", action = "Paste"}
-]

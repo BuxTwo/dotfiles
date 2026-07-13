@@ -145,6 +145,7 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swayidle"
 spawn-at-startup "waybar"
 spawn-at-startup "dunst"
+spawn-at-startup "wlsunset" "-s" "19:00" "-S" "07:00"
 spawn-sh-at-startup "swaybg -m fill -i $HOME/.wallpaper/3.jpeg"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -194,7 +195,7 @@ blur {
     saturation 1.5
 }
 
-// Window rules let you adjust behavior for individual windows.
+// Window rules.
 window-rule {
     draw-border-with-background false
     geometry-corner-radius 10
@@ -236,7 +237,7 @@ window-rule {
 
 // Layer rules.
 layer-rule {
-    match namespace="^(waybar|logout_dialog)$"
+    match namespace="^waybar$"
     opacity 0.95
     background-effect {
         xray false
@@ -258,9 +259,6 @@ layer-rule {
 animations {
     // Uncomment to turn off all animations.
     // off
-
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
 }
 
 gestures {
@@ -298,9 +296,9 @@ binds {
     // Suggested binds for running programs.
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+E hotkey-overlay-title="Open a File Manager: nautilus" { spawn "nautilus"; }
-    Mod+X hotkey-overlay-title="Run an Application: wlogout" { spawn "wlogout" "-b" "4" "-L" "200" "-R" "200" "-T" "350" "-B" "350"; }
+    Mod+X hotkey-overlay-title="Open a Power Menu: powermenu.sh" { spawn "powermenu.sh"; }
 
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -312,8 +310,8 @@ binds {
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
     // "-l 1.0" limits the volume to 100%.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
@@ -327,8 +325,8 @@ binds {
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
     // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+2%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "2%-"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
